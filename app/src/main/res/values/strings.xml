@@ -4,12 +4,14 @@
     <string name="your_name">Your Name</string>
     <string name="your_pass">Your Password</string>
     <string name="using_custom_title">Using %d to Sign Up</string>
+    <string name="hint_password">Password</string>
     <!-- Ask Number Fragment -->
     <string name="title_ask_num">What’s your\nRegistration\nNumber?</string>
     <string name="registration_number_title">Your Registration Number</string>
     <string name="hint_registration_number">Registration No.</string>
     <!-- Sign Up Fragment -->
     <string name="title_signup">Sign Up</string>
+    <string name="hint_name">Name</string>
     <!-- Login Fragment -->
     <string name="title_login">Log In</string>
 </resources>
