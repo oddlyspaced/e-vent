@@ -32,6 +32,13 @@
         <item name="lineHeight">24sp</item>
         <item name="android:letterSpacing">0</item>
     </style>
+    
+    <style name="TextAppearance.SubTitle" parent="Theme.Compass">
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:textSize">13sp</item>
+        <item name="lineHeight">24sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
 
     <style name="EditText.Default" parent="TextAppearance.Title">
         <item name="backgroundTint">@color/background</item>
