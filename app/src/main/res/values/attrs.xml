@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomTextField">
+        <attr name="iconVisible" format="boolean"/>
+        <attr name="iconSrc" format="reference"/>
+        <attr name="title" format="string"/>
+        <attr name="hint" format="boolean"/>
+    </declare-styleable>
+</resources>
