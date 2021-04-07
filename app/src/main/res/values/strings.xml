@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Compass</string>
+    <string name="text_continue">Continue</string>
+    <!-- Ask Number Fragment -->
+    <string name="title_ask_num">What’s your\nRegistration\nNumber?</string>
+    <string name="registration_number_title">Your Registration Number</string>
+    <string name="hint_registration_number">Registration No.</string>
 </resources>
