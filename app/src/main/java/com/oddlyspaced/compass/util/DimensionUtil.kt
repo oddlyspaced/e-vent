@@ -1,4 +1,4 @@
-package com.oddlyspaced.compass
+package com.oddlyspaced.compass.util
 
 import android.content.Context
 import android.util.TypedValue
