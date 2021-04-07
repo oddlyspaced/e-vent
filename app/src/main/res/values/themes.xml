@@ -10,4 +10,31 @@
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="TextAppearance.Heading" parent="Theme.Compass">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">32sp</item>
+        <item name="lineHeight">40sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="TextAppearance.Chip" parent="Theme.Compass">
+        <item name="fontFamily">@font/inter_bold</item>
+        <item name="android:textSize">10sp</item>
+        <item name="lineHeight">16sp</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="TextAppearance.Title" parent="Theme.Compass">
+        <item name="fontFamily">@font/inter_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">24sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="EditText.Default" parent="TextAppearance.Title">
+        <item name="backgroundTint">@color/background</item>
+    </style>
+
 </resources>
