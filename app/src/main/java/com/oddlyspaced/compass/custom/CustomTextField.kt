@@ -54,5 +54,9 @@ class CustomTextField: ConstraintLayout {
         }
     }
 
+    fun getText(): String {
+        return binding.etCustomTextField.text.toString()
+    }
+
 
 }
