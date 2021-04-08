@@ -5,15 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imgOverviewExpand2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/textView4"
-        app:layout_constraintEnd_toStartOf="@+id/guideline6"
-        app:layout_constraintTop_toTopOf="@+id/glTop4"
-        app:srcCompat="@drawable/ic_edit" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/glTop4"
         android:layout_width="wrap_content"
