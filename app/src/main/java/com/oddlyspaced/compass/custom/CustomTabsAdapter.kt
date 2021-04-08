@@ -7,11 +7,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.oddlyspaced.compass.R
 import com.oddlyspaced.compass.databinding.LayoutTabBinding
 
-class CustomTabsAdapter(private val items: MutableList<String>): RecyclerView.Adapter<CustomTabsAdapter.TabViewHolder>() {
+class CustomTabsAdapter(private val items: MutableList<String>, private val onClickTab: (Int) -> Unit): RecyclerView.Adapter<CustomTabsAdapter.TabViewHolder>() {
 
     var active = 0
         set(value) {
             field = value
+            onClickTab(value)
             items.forEachIndexed { index, _ ->
                 notifyItemChanged(index)
             }
