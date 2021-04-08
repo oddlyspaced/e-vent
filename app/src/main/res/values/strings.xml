@@ -3,7 +3,8 @@
     <string name="text_continue">Continue</string>
     <string name="your_name">Your Name</string>
     <string name="your_pass">Your Password</string>
-    <string name="using_custom_title">Using %d to Sign Up</string>
+    <string name="using_sign_up">Using %s to Sign Up</string>
+    <string name="using_login">Using %s to Log In</string>
     <string name="hint_password">Password</string>
     <!-- Ask Number Fragment -->
     <string name="title_ask_num">What’s your\nRegistration\nNumber?</string>
