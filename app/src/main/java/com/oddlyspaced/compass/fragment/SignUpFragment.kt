@@ -1,5 +1,6 @@
 package com.oddlyspaced.compass.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.chip.Chip
 import com.oddlyspaced.compass.R
+import com.oddlyspaced.compass.activity.DashboardActivity
 import com.oddlyspaced.compass.custom.EventAdapter
 import com.oddlyspaced.compass.databinding.FragmentAskNumberBinding
 import com.oddlyspaced.compass.databinding.FragmentFollowBinding
@@ -16,6 +18,7 @@ import com.oddlyspaced.compass.databinding.FragmentSignUpBinding
 class SignUpFragment: Fragment() {
 
     private lateinit var binding: FragmentSignUpBinding
+    var regNum: String? = null
 
     companion object {
         @JvmStatic
@@ -30,8 +33,10 @@ class SignUpFragment: Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.txSignUpSubtext.text = getString(R.string.using_sign_up, regNum ?: "")
         binding.customButton.setOnClickListener {
-
+            startActivity(Intent(context, DashboardActivity::class.java))
+            activity?.finish()
         }
     }
 

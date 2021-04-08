@@ -45,7 +45,7 @@
         app:hint="@string/hint_name"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/glLeft"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/txSignUpSubtext"
         app:title="@string/your_name" />
 
     <com.oddlyspaced.compass.custom.CustomTextField
@@ -71,12 +71,12 @@
         app:text="@string/text_continue" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txSignUpSubtext"
         style="@style/TextAppearance.SubTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/using_custom_title"
+        android:text="@string/using_sign_up"
         app:layout_constraintStart_toStartOf="@+id/glLeft"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
