@@ -1,7 +1,8 @@
-package com.oddlyspaced.compass
+package com.oddlyspaced.compass.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.oddlyspaced.compass.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

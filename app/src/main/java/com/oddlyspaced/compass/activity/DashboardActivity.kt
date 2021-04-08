@@ -1,4 +1,4 @@
-package com.oddlyspaced.compass
+package com.oddlyspaced.compass.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
