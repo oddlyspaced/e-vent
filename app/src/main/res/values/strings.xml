@@ -14,4 +14,6 @@
     <string name="hint_name">Name</string>
     <!-- Login Fragment -->
     <string name="title_login">Log In</string>
+    <!-- Dashboard -->
+    <string name="title_dashboard">Dashboard</string>
 </resources>
