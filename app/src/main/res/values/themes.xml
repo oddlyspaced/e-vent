@@ -47,6 +47,27 @@
         <item name="android:letterSpacing">0</item>
     </style>
 
+    <style name="TextAppearance.Event.Min.Heading" parent="Theme.Compass">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="lineHeight">24sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="TextAppearance.Event.Min.Subheading" parent="Theme.Compass">
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">24sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="TextAppearance.Event.Min.Content" parent="Theme.Compass">
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">12sp</item>
+        <item name="lineHeight">24sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
     <style name="EditText.Default" parent="TextAppearance.Title">
         <item name="backgroundTint">@color/background</item>
     </style>
