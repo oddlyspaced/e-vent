@@ -14,6 +14,30 @@ class MinimisedEvent: CardView {
 
     private lateinit var binding: LayoutEventMinBinding
 
+    var title = ""
+        set(value) {
+            field = value
+            binding.txEventTitle.text = value
+        }
+
+    var time = ""
+        set(value) {
+            field = value
+            binding.txEventDate.text = value
+        }
+
+    var location = ""
+        set(value) {
+            field = value
+            binding.txEventLocation.text = value
+        }
+
+    var logo = R.drawable.dsc
+        set(value) {
+            field = value
+            binding.imgEventLogo.setImageResource(value)
+        }
+
     constructor(ctx: Context) : super(ctx) {
         init(ctx)
     }
