@@ -9,8 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.oddlyspaced.compass.R
 import com.oddlyspaced.compass.activity.EventDetailActivity
 import com.oddlyspaced.compass.databinding.ItemEventBinding
+import com.oddlyspaced.compass.modal.EventItem
 
-class EventAdapter(): RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
+class EventAdapter(private val list: ArrayList<EventItem>): RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
 
     inner class EventViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         private val binding = ItemEventBinding.bind(itemView)
@@ -22,10 +23,17 @@ class EventAdapter(): RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
-        holder.event.setOnClickListener {
-            holder.itemView.context.startActivity(Intent(holder.itemView.context, EventDetailActivity::class.java))
+        holder.itemView.context.let { context ->
+            holder.event.setOnClickListener {
+                context.startActivity(Intent(context, EventDetailActivity::class.java))
+            }
         }
+        val item = list[position]
+        holder.event.title = item.title
+        holder.event.location = item.location
+        holder.event.time = item.timing
+        holder.event.logo = item.img
     }
 
-    override fun getItemCount(): Int = 5
+    override fun getItemCount(): Int = list.size
 }
