@@ -28,13 +28,16 @@ class OverviewFragment: Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.rvOverviewToday.layoutManager = CardStackLayoutManager(context).apply {
+        val cardStackLayoutManager = CardStackLayoutManager(context).apply {
             setCanScrollHorizontal(false)
             setCanScrollVertical(false)
         }
+        val linearLayoutManager = LinearLayoutManager(context)
+        binding.rvOverviewToday.layoutManager = cardStackLayoutManager
         binding.rvOverviewToday.adapter = EventAdapter()
+        
         binding.imgOverviewExpand.setOnClickListener {
-            binding.rvOverviewToday.layoutManager = LinearLayoutManager(context)
+            binding.rvOverviewToday.layoutManager = if (binding.rvOverviewToday.layoutManager is CardStackLayoutManager) linearLayoutManager else cardStackLayoutManager
             binding.rvOverviewToday.adapter = EventAdapter()
         }
     }
