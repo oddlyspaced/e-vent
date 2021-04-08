@@ -12,6 +12,10 @@ class CustomTabsAdapter(private val items: MutableList<String>): RecyclerView.Ad
     var active = 0
         set(value) {
             field = value
+            items.forEachIndexed { index, _ ->
+                notifyItemChanged(index)
+            }
+            notifyItemChanged(value)
         }
 
     inner class TabViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
@@ -25,6 +29,11 @@ class CustomTabsAdapter(private val items: MutableList<String>): RecyclerView.Ad
     }
 
     override fun onBindViewHolder(holder: TabViewHolder, position: Int) {
+        holder.card.setOnClickListener {
+            if (position != active) {
+                active = position
+            }
+        }
         holder.text.text = items[position]
         holder.itemView.context.let { context ->
             when(position) {
@@ -36,7 +45,6 @@ class CustomTabsAdapter(private val items: MutableList<String>): RecyclerView.Ad
                     // inactive
                     holder.card.setCardBackgroundColor(context.getColor(R.color.background))
                     holder.text.setTextColor(context.getColor(R.color.text_dark))
-
                 }
             }
         }
