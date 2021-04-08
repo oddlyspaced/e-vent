@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.oddlyspaced.compass.custom.CustomTabsAdapter
 import com.oddlyspaced.compass.databinding.ActivityDashboardBinding
+import com.oddlyspaced.compass.fragment.FollowFragment
 import com.oddlyspaced.compass.fragment.OverviewFragment
 
 class DashboardActivity : AppCompatActivity() {
@@ -20,10 +21,11 @@ class DashboardActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val adapter = CustomTabsAdapter(mutableListOf("Overview", "Following", "Events"))
+        adapter.active = 1
         binding.rvTabs.layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.HORIZONTAL, false)
         binding.rvTabs.adapter = adapter
 
-        binding.viewPagerDashboard.adapter = ViewPagerAdapter(arrayListOf(OverviewFragment.newInstance()), supportFragmentManager)
+        binding.viewPagerDashboard.adapter = ViewPagerAdapter(arrayListOf(FollowFragment.newInstance()), supportFragmentManager)
     }
 
     inner class ViewPagerAdapter(private val fragments: ArrayList<Fragment>, fm: FragmentManager) : FragmentPagerAdapter(fm) {
