@@ -10,5 +10,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         startActivity(Intent(applicationContext, AccountActivity::class.java))
+        finish()
     }
 }
