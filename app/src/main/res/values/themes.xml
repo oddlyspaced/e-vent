@@ -40,8 +40,27 @@
         <item name="android:letterSpacing">0</item>
     </style>
 
+    <style name="TextAppearance.Tab" parent="Theme.Compass">
+        <item name="fontFamily">@font/inter_semibold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">24sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
     <style name="EditText.Default" parent="TextAppearance.Title">
         <item name="backgroundTint">@color/background</item>
+    </style>
+
+    <style name="CardView.Tab.Active" parent="Theme.Compass">
+        <item name="cardCornerRadius">24dp</item>
+        <item name="cardBackgroundColor">@color/accent</item>
+        <item name="cardElevation">2dp</item>
+    </style>
+
+    <style name="CardView.Tab.Inactive" parent="Theme.Compass">
+        <item name="cardCornerRadius">24dp</item>
+        <item name="cardBackgroundColor">@color/background</item>
+        <item name="cardElevation">0dp</item>
     </style>
 
 </resources>
