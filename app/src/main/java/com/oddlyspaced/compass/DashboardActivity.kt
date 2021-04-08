@@ -19,7 +19,7 @@ class DashboardActivity : AppCompatActivity() {
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val adapter = CustomTabsAdapter(mutableListOf("Overview", "Following", "Events", "Events", "events", "events"))
+        val adapter = CustomTabsAdapter(mutableListOf("Overview", "Following", "Events"))
         binding.rvTabs.layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.HORIZONTAL, false)
         binding.rvTabs.adapter = adapter
 
