@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.chip.Chip
+import com.oddlyspaced.compass.Global
 import com.oddlyspaced.compass.R
 import com.oddlyspaced.compass.custom.EventAdapter
 import com.oddlyspaced.compass.databinding.FragmentFollowBinding
@@ -32,7 +33,7 @@ class FollowFragment: Fragment() {
         populateChips(tags)
 
         binding.rvFollowEvents.layoutManager = LinearLayoutManager(context)
-        binding.rvFollowEvents.adapter = EventAdapter()
+        binding.rvFollowEvents.adapter = EventAdapter(Global.getMockData())
     }
 
     private fun populateChips(chipTitles: ArrayList<String>) {

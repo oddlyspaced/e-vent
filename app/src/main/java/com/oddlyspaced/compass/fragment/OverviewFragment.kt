@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.oddlyspaced.compass.Global
 import com.oddlyspaced.compass.R
 import com.oddlyspaced.compass.custom.EventAdapter
 import com.oddlyspaced.compass.databinding.FragmentOverviewBinding
@@ -34,11 +35,11 @@ class OverviewFragment: Fragment() {
         }
         val linearLayoutManager = LinearLayoutManager(context)
         binding.rvOverviewToday.layoutManager = cardStackLayoutManager
-        binding.rvOverviewToday.adapter = EventAdapter()
+        binding.rvOverviewToday.adapter = EventAdapter(Global.getMockData())
         
         binding.imgOverviewExpand.setOnClickListener {
             binding.rvOverviewToday.layoutManager = if (binding.rvOverviewToday.layoutManager is CardStackLayoutManager) linearLayoutManager else cardStackLayoutManager
-            binding.rvOverviewToday.adapter = EventAdapter()
+            binding.rvOverviewToday.adapter = EventAdapter(Global.getMockData())
         }
     }
 }

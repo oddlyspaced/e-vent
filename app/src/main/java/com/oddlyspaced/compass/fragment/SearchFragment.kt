@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.oddlyspaced.compass.Global
 import com.oddlyspaced.compass.R
 import com.oddlyspaced.compass.custom.EventAdapter
 import com.oddlyspaced.compass.databinding.FragmentOverviewBinding
@@ -30,6 +31,6 @@ class SearchFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.rvSearchEvents.layoutManager = LinearLayoutManager(context)
-        binding.rvSearchEvents.adapter = EventAdapter()
+        binding.rvSearchEvents.adapter = EventAdapter(Global.getMockData())
     }
 }
