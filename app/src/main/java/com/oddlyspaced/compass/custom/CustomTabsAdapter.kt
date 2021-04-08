@@ -25,6 +25,7 @@ class CustomTabsAdapter(private val items: MutableList<String>): RecyclerView.Ad
     }
 
     override fun onBindViewHolder(holder: TabViewHolder, position: Int) {
+        holder.text.text = items[position]
         holder.itemView.context.let { context ->
             when(position) {
                 active -> {
