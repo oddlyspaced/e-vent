@@ -10,6 +10,7 @@ import com.oddlyspaced.compass.custom.CustomTabsAdapter
 import com.oddlyspaced.compass.databinding.ActivityDashboardBinding
 import com.oddlyspaced.compass.fragment.FollowFragment
 import com.oddlyspaced.compass.fragment.OverviewFragment
+import com.oddlyspaced.compass.fragment.SearchFragment
 
 class DashboardActivity : AppCompatActivity() {
 
@@ -20,12 +21,19 @@ class DashboardActivity : AppCompatActivity() {
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val adapter = CustomTabsAdapter(mutableListOf("Overview", "Following", "Events"))
-        adapter.active = 1
+        val adapter = CustomTabsAdapter(mutableListOf("Overview", "Following", "Events")) { pageIndex ->
+            binding.viewPagerDashboard.setCurrentItem(pageIndex, true)
+        }
         binding.rvTabs.layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.HORIZONTAL, false)
         binding.rvTabs.adapter = adapter
 
-        binding.viewPagerDashboard.adapter = ViewPagerAdapter(arrayListOf(FollowFragment.newInstance()), supportFragmentManager)
+        binding.viewPagerDashboard.isDisabled = true
+        binding.viewPagerDashboard.adapter = ViewPagerAdapter(
+                arrayListOf(
+                        OverviewFragment.newInstance(),
+                        FollowFragment.newInstance(),
+                        SearchFragment.newInstance()
+                ), supportFragmentManager)
     }
 
     inner class ViewPagerAdapter(private val fragments: ArrayList<Fragment>, fm: FragmentManager) : FragmentPagerAdapter(fm) {
