@@ -34,7 +34,7 @@ class Global {
             ),
             EventItem(
                 4,
-                "Hackathon",
+                "Hackathon 123",
                 "https://raw.githubusercontent.com/oddlyspaced/covid19-android/master/screenshots/icon.png",
                 "April 08 - 12:00 PM",
                 "Dome building",
