@@ -47,6 +47,7 @@ class EventAdapter(private val list: ArrayList<EventItem>): RecyclerView.Adapter
         onLongClick?.let {
             holder.event.onTagLongClick = it
         }
+        holder.event.tags = item.tags.toTypedArray()
 //        holder.event.logo = item.img
     }
 
