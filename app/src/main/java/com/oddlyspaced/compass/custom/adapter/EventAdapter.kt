@@ -30,8 +30,8 @@ class EventAdapter(private val list: ArrayList<EventItem>): RecyclerView.Adapter
         val item = list[position]
         holder.event.title = item.title
         holder.event.location = item.location
-        holder.event.time = item.timing
-        holder.event.logo = item.img
+        holder.event.time = item.time
+//        holder.event.logo = item.img
     }
 
     override fun getItemCount(): Int = list.size
