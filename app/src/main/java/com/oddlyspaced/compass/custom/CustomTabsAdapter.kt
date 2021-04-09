@@ -10,20 +10,16 @@ import com.oddlyspaced.compass.databinding.LayoutTabInactiveBinding
 
 class CustomTabsAdapter(private val items: MutableList<String>, private val onClickTab: (Int) -> Unit): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-
     private companion object {
         const val TYPE_ACTIVE = 1
         const val TYPE_INACTIVE = 0
     }
-    var active = 0
+
+    private var active = 0
         set(value) {
             field = value
             onClickTab(value)
             notifyDataSetChanged()
-//            items.forEachIndexed { index, _ ->
-//                notifyItemChanged(index)
-//            }
-//            notifyItemChanged(value)
         }
 
     inner class ActiveTabViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
