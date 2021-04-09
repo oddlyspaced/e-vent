@@ -31,7 +31,7 @@
         style="@style/TextAppearance.Tab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tags"
+        android:text="Following Tags"
         app:layout_constraintStart_toStartOf="@+id/glLeft4"
         app:layout_constraintTop_toTopOf="@+id/glTop4" />
 
