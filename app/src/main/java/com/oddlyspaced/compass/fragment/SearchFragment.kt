@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.chip.Chip
 import com.oddlyspaced.compass.Global
 import com.oddlyspaced.compass.R
 import com.oddlyspaced.compass.custom.adapter.EventAdapter
@@ -22,6 +23,8 @@ class SearchFragment: Fragment() {
     private val eventList = arrayListOf<EventItem>()
     // this will hold a modified and filtered out list of events which will be in the adapter
     private val eventListParsed = arrayListOf<EventItem>()
+    // list of tags for primary filtering
+    private val tags = arrayListOf("DSC", "ACM", "IEEE", "Web Dev", "Android")
 
     private lateinit var adapter: EventAdapter
 
@@ -75,6 +78,8 @@ class SearchFragment: Fragment() {
         binding.csbSearch.onTextChanged = { query ->
             filterSearch(query)
         }
+
+        populateChips(tags)
     }
 
     /**
@@ -90,5 +95,20 @@ class SearchFragment: Fragment() {
         )
         adapter.notifyDataSetChanged()
     }
+
+    private fun populateChips(chipTitles: ArrayList<String>) {
+        chipTitles.forEachIndexed { index, str ->
+            val chip = LayoutInflater.from(context).inflate(R.layout.item_chip, null, false) as Chip
+            chip.text = str
+            chip.setOnCloseIconClickListener {
+                binding.chipGroup.removeViewAt(index)
+                tags.removeAt(index)
+                binding.chipGroup.removeAllViews()
+                populateChips(tags)
+            }
+            binding.chipGroup.addView(chip)
+        }
+    }
+
 
 }
