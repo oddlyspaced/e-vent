@@ -1,4 +1,4 @@
-package com.oddlyspaced.compass.custom
+package com.oddlyspaced.compass.custom.adapter
 
 import android.view.LayoutInflater
 import android.view.View

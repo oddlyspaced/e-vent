@@ -26,7 +26,7 @@
         android:orientation="vertical"
         app:layout_constraintGuide_end="32dp" />
 
-    <com.oddlyspaced.compass.custom.CustomSearchBox
+    <com.oddlyspaced.compass.custom.view.CustomSearchBox
         android:id="@+id/include"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

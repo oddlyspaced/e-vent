@@ -38,7 +38,7 @@
         app:layout_constraintStart_toStartOf="@+id/glLeft"
         app:layout_constraintTop_toTopOf="@+id/glTop" />
 
-    <com.oddlyspaced.compass.custom.CustomTextField
+    <com.oddlyspaced.compass.custom.view.CustomTextField
         android:id="@+id/customTextField"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -49,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:title="@string/registration_number_title" />
 
-    <com.oddlyspaced.compass.custom.CustomButton
+    <com.oddlyspaced.compass.custom.view.CustomButton
         android:id="@+id/customBtnContinue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

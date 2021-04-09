@@ -161,7 +161,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <com.oddlyspaced.compass.custom.CustomButton
+    <com.oddlyspaced.compass.custom.view.CustomButton
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"

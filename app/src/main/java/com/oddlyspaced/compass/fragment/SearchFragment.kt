@@ -8,10 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.oddlyspaced.compass.Global
 import com.oddlyspaced.compass.R
-import com.oddlyspaced.compass.custom.EventAdapter
-import com.oddlyspaced.compass.databinding.FragmentOverviewBinding
+import com.oddlyspaced.compass.custom.adapter.EventAdapter
 import com.oddlyspaced.compass.databinding.FragmentSearchBinding
-import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 
 // TODO : Add filter for sorting events by date
 class SearchFragment: Fragment() {

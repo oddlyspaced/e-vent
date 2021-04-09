@@ -1,4 +1,4 @@
-package com.oddlyspaced.compass.custom
+package com.oddlyspaced.compass.custom.view
 
 import android.annotation.SuppressLint
 import android.content.Context

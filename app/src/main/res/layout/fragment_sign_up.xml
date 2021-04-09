@@ -37,7 +37,7 @@
         app:layout_constraintStart_toStartOf="@+id/glLeft"
         app:layout_constraintTop_toTopOf="@+id/glTop" />
 
-    <com.oddlyspaced.compass.custom.CustomTextField
+    <com.oddlyspaced.compass.custom.view.CustomTextField
         android:id="@+id/ctfName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txSignUpSubtext"
         app:title="@string/your_name" />
 
-    <com.oddlyspaced.compass.custom.CustomTextField
+    <com.oddlyspaced.compass.custom.view.CustomTextField
         android:id="@+id/ctfPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ctfName"
         app:title="@string/your_pass" />
 
-    <com.oddlyspaced.compass.custom.CustomButton
+    <com.oddlyspaced.compass.custom.view.CustomButton
         android:id="@+id/customButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

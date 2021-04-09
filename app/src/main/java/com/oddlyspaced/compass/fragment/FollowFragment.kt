@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.chip.Chip
 import com.oddlyspaced.compass.Global
 import com.oddlyspaced.compass.R
-import com.oddlyspaced.compass.custom.EventAdapter
+import com.oddlyspaced.compass.custom.adapter.EventAdapter
 import com.oddlyspaced.compass.databinding.FragmentFollowBinding
 
 class FollowFragment: Fragment() {

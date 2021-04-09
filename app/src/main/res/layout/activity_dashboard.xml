@@ -47,7 +47,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-    <com.oddlyspaced.compass.custom.CustomViewPager
+    <com.oddlyspaced.compass.custom.view.CustomViewPager
         android:id="@+id/viewPagerDashboard"
         android:layout_width="0dp"
         android:layout_height="0dp"

@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.oddlyspaced.compass.custom.CustomTabsAdapter
+import com.oddlyspaced.compass.custom.adapter.CustomTabsAdapter
 import com.oddlyspaced.compass.databinding.ActivityDashboardBinding
 import com.oddlyspaced.compass.fragment.FollowFragment
 import com.oddlyspaced.compass.fragment.OverviewFragment
