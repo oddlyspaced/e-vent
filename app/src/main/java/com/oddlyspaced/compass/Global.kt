@@ -32,7 +32,33 @@ class Global {
                 1001,
                 arrayListOf("hacking", "web")
             ),
-
+            EventItem(
+                4,
+                "Hackathon",
+                "https://raw.githubusercontent.com/oddlyspaced/covid19-android/master/screenshots/icon.png",
+                "April 08 - 12:00 PM",
+                "Dome building",
+                1001,
+                arrayListOf("Android")
+            ),
+            EventItem(
+                5,
+                "Study Jam",
+                "https://raw.githubusercontent.com/oddlyspaced/covid19-android/master/screenshots/icon.png",
+                "April 08 - 12:00 PM",
+                "Dome building",
+                1001,
+                arrayListOf("jam", "app")
+            ),
+            EventItem(
+                6,
+                "Workshop",
+                "https://raw.githubusercontent.com/oddlyspaced/covid19-android/master/screenshots/icon.png",
+                "April 08 - 12:00 PM",
+                "Dome building",
+                1001,
+                arrayListOf("hacking", "web")
+            ),
         )
     }
 }
