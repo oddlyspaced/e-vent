@@ -3,6 +3,7 @@ package com.oddlyspaced.compass.custom.view
 import android.content.Context
 import android.graphics.Color
 import android.util.AttributeSet
+import android.util.Log
 import android.view.LayoutInflater
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
@@ -14,6 +15,10 @@ import com.oddlyspaced.compass.databinding.LayoutEventMinBinding
 import com.oddlyspaced.compass.util.DimensionUtils
 
 class MinimisedEvent: CardView {
+
+    private companion object {
+        const val TAG = "MinimisedEvent"
+    }
 
     private lateinit var binding: LayoutEventMinBinding
 
@@ -44,7 +49,26 @@ class MinimisedEvent: CardView {
     var tags = arrayOf("Android", "App")
         set(value) {
             field = value
-            binding.rvEventTags.adapter = CustomTagsAdapter(value)
+            binding.rvEventTags.adapter = CustomTagsAdapter(value, onTagClicked, onTagLongClick)
+        }
+
+    var onTagClicked = { tag: String ->
+        // click filter, long press follow
+        Log.d(TAG, "$tag Pressed")
+        Unit
+    }
+        set(value) {
+            field = value
+            binding.rvEventTags.adapter = CustomTagsAdapter(tags, value, onTagLongClick)
+        }
+
+    var onTagLongClick = { tag: String ->
+        Log.d(TAG, "$tag Long Pressed")
+        Unit
+    }
+        set(value) {
+            field = value
+            binding.rvEventTags.adapter = CustomTagsAdapter(tags, onTagClicked, value)
         }
 
     constructor(ctx: Context) : super(ctx) {
@@ -66,7 +90,7 @@ class MinimisedEvent: CardView {
         this.radius = DimensionUtils.floatToDp(context, 12F)
 
         binding.rvEventTags.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        binding.rvEventTags.adapter = CustomTagsAdapter(tags)
+        binding.rvEventTags.adapter = CustomTagsAdapter(tags, onTagClicked, onTagLongClick)
     }
 
 }
