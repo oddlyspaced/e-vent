@@ -69,6 +69,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView6">
 
                 <CheckBox
+                    android:id="@+id/cbFilterInterCollege"
                     style="@style/TextAppearance.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -76,6 +77,7 @@
                     android:text="Inter College" />
 
                 <CheckBox
+                    android:id="@+id/cbFilterIntraCollege"
                     style="@style/TextAppearance.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -101,22 +103,23 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/txFilterScope"
                 style="@style/TextAppearance.SubTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="State"
+                android:text="District"
                 app:layout_constraintBottom_toBottomOf="@+id/textView7"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView7" />
 
             <com.google.android.material.slider.Slider
+                android:id="@+id/sliderFilterScope"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:stepSize="1"
                 android:value="0"
                 android:valueFrom="0"
-                android:valueTo="5"
+                android:valueTo="4"
                 app:labelBehavior="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -124,6 +127,17 @@
                 app:thumbColor="@color/accent"
                 app:trackColorActive="@color/accent"
                 app:trackColorInactive="@color/accent_light" />
+
+            <View
+                android:id="@+id/viewFilterScopeDisable"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/disabled"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -149,7 +163,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView14">
 
                 <CheckBox
-                    android:id="@+id/checkBox3"
+                    android:id="@+id/cbFilterFree"
                     style="@style/TextAppearance.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -157,7 +171,7 @@
                     android:text="Free" />
 
                 <CheckBox
-                    android:id="@+id/checkBox4"
+                    android:id="@+id/cbFilterPaid"
                     style="@style/TextAppearance.Button"
 
                     android:layout_width="wrap_content"
