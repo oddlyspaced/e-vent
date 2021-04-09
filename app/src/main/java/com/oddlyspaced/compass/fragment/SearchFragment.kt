@@ -32,5 +32,12 @@ class SearchFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.rvSearchEvents.layoutManager = LinearLayoutManager(context)
         binding.rvSearchEvents.adapter = EventAdapter(Global.getMockData())
+        binding.imgSearchFilter.setOnClickListener {
+            fragmentManager?.let {
+                FilterBottomSheetFragment.newInstance().apply {
+                    show(it, "FilterSheet")
+                }
+            }
+        }
     }
 }
