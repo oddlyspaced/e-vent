@@ -1,8 +1,11 @@
 package com.oddlyspaced.compass.modal
 
 data class EventItem(
+    val id: Int,
     val title: String,
-    val timing: String,
+    val clubLogo: String,
+    val time: String,
     val location: String,
-    val img: Int
+    val eventId: Int,
+    val tags: ArrayList<String>
 )
