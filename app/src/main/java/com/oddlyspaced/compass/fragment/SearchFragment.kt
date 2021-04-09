@@ -79,6 +79,7 @@ class SearchFragment: Fragment() {
                 if (!tags.contains(tag)) {
                     tags.add(tag)
                     populateChips()
+                    filterTags()
                 }
             },
             {
@@ -108,6 +109,29 @@ class SearchFragment: Fragment() {
         adapter.notifyDataSetChanged()
     }
 
+    private fun filterTags() {
+        if (tags.isEmpty()) {
+            eventListParsed.clear()
+            eventListParsed.addAll(eventList)
+            adapter.notifyDataSetChanged()
+            populateChips()
+        }
+        else {
+            eventListParsed.clear()
+            val itemBuffer = arrayListOf<EventItem>()
+            tags.forEach { tag ->
+                eventList.forEach { item ->
+                    if (item.tags.contains(tag) && !eventListParsed.contains(item)) {
+                        itemBuffer.add(item)
+                    }
+                }
+                eventListParsed.addAll(itemBuffer)
+                itemBuffer.clear()
+            }
+            adapter.notifyDataSetChanged()
+        }
+    }
+
     private fun populateChips() {
         binding.txSearchNoTag.isVisible = tags.isEmpty()
         // TODO : Improve this
@@ -120,6 +144,7 @@ class SearchFragment: Fragment() {
                 tags.removeAt(index)
                 binding.chipGroup.removeAllViews()
                 populateChips()
+                filterTags()
             }
             binding.chipGroup.addView(chip)
         }
