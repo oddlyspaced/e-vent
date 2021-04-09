@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true">
@@ -26,6 +27,16 @@
         android:orientation="vertical"
         app:layout_constraintGuide_end="32dp" />
 
+    <TextView
+        android:id="@+id/textView17"
+        style="@style/TextAppearance.Tab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Filter Tags"
+        app:layout_constraintStart_toStartOf="@+id/glLeft5"
+        app:layout_constraintTop_toBottomOf="@+id/csbSearch" />
+
     <com.oddlyspaced.compass.custom.view.CustomSearchBox
         android:id="@+id/csbSearch"
         android:layout_width="0dp"
@@ -41,10 +52,9 @@
         android:id="@+id/chipGroup"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="@+id/glLeft5"
-        app:layout_constraintTop_toBottomOf="@+id/csbSearch">
+        app:layout_constraintTop_toBottomOf="@+id/txSearchNoTag">
 
         <!-- Chips can be declared here, or added dynamically. -->
 
@@ -81,5 +91,16 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toTopOf="@+id/glTop5"
         app:srcCompat="@drawable/ic_filter" />
+
+    <TextView
+        android:id="@+id/txSearchNoTag"
+        style="@style/TextAppearance.Chip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="None"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/glLeft5"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

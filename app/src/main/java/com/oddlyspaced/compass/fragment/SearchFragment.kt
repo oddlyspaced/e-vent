@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.chip.Chip
@@ -24,7 +25,7 @@ class SearchFragment: Fragment() {
     // this will hold a modified and filtered out list of events which will be in the adapter
     private val eventListParsed = arrayListOf<EventItem>()
     // list of tags for primary filtering
-    private val tags = arrayListOf("DSC", "ACM", "IEEE", "Web Dev", "Android")
+    private val tags = arrayListOf<String>()
 
     private lateinit var adapter: EventAdapter
 
@@ -97,6 +98,7 @@ class SearchFragment: Fragment() {
     }
 
     private fun populateChips(chipTitles: ArrayList<String>) {
+        binding.txSearchNoTag.isVisible = chipTitles.isEmpty()
         chipTitles.forEachIndexed { index, str ->
             val chip = LayoutInflater.from(context).inflate(R.layout.item_chip, null, false) as Chip
             chip.text = str
@@ -109,6 +111,5 @@ class SearchFragment: Fragment() {
             binding.chipGroup.addView(chip)
         }
     }
-
 
 }
