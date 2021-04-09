@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -72,7 +73,17 @@ class SearchFragment: Fragment() {
      * Ui components which would be initialised after loading data
      */
     private fun initPostLoadUi() {
-        adapter = EventAdapter(eventListParsed)
+        adapter = EventAdapter(
+            eventListParsed,
+            { tag ->
+                if (!tags.contains(tag)) {
+                    tags.add(tag)
+                    populateChips()
+                }
+            },
+            {
+
+            })
         binding.rvSearchEvents.layoutManager = LinearLayoutManager(context)
         binding.rvSearchEvents.adapter = adapter
 
@@ -80,7 +91,7 @@ class SearchFragment: Fragment() {
             filterSearch(query)
         }
 
-        populateChips(tags)
+        populateChips()
     }
 
     /**
@@ -97,16 +108,18 @@ class SearchFragment: Fragment() {
         adapter.notifyDataSetChanged()
     }
 
-    private fun populateChips(chipTitles: ArrayList<String>) {
-        binding.txSearchNoTag.isVisible = chipTitles.isEmpty()
-        chipTitles.forEachIndexed { index, str ->
+    private fun populateChips() {
+        binding.txSearchNoTag.isVisible = tags.isEmpty()
+        // TODO : Improve this
+        binding.chipGroup.removeAllViews()
+        tags.forEachIndexed { index, str ->
             val chip = LayoutInflater.from(context).inflate(R.layout.item_chip, null, false) as Chip
             chip.text = str
             chip.setOnCloseIconClickListener {
                 binding.chipGroup.removeViewAt(index)
                 tags.removeAt(index)
                 binding.chipGroup.removeAllViews()
-                populateChips(tags)
+                populateChips()
             }
             binding.chipGroup.addView(chip)
         }
