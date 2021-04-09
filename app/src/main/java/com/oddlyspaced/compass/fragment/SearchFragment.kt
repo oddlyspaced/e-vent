@@ -1,5 +1,6 @@
 package com.oddlyspaced.compass.fragment
 
+import android.icu.text.StringSearch
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -16,6 +17,7 @@ import com.oddlyspaced.compass.custom.adapter.EventAdapter
 import com.oddlyspaced.compass.databinding.FragmentSearchBinding
 import com.oddlyspaced.compass.modal.EventItem
 import java.util.*
+import kotlin.collections.ArrayList
 
 // TODO : Add filter for sorting events by date
 class SearchFragment: Fragment() {
@@ -25,6 +27,7 @@ class SearchFragment: Fragment() {
     private val eventList = arrayListOf<EventItem>()
     // this will hold a modified and filtered out list of events which will be in the adapter
     private val eventListParsed = arrayListOf<EventItem>()
+    private var searchQuery = ""
     // list of tags for primary filtering
     private val tags = arrayListOf<String>()
 
@@ -79,7 +82,7 @@ class SearchFragment: Fragment() {
                 if (!tags.contains(tag)) {
                     tags.add(tag)
                     populateChips()
-                    filterTags()
+                    updateData()
                 }
             },
             {
@@ -89,46 +92,50 @@ class SearchFragment: Fragment() {
         binding.rvSearchEvents.adapter = adapter
 
         binding.csbSearch.onTextChanged = { query ->
-            filterSearch(query)
+            searchQuery = query
+            updateData()
         }
 
         populateChips()
     }
 
     /**
-     * Utility function to filter out items based on query
-     * @param query Search query
+     * Updates data after applying combination of tags and search filtering
      */
-    private fun filterSearch(query: String) {
+    private fun updateData() {
         eventListParsed.clear()
-        eventListParsed.addAll(
-            eventList.filter {
-                it.title.toLowerCase(Locale.getDefault()).contains(query.toLowerCase(Locale.getDefault()))
-            }
-        )
+        eventListParsed.apply {
+            addAll(filterTags(filterSearch(eventList, searchQuery), tags))
+        }
         adapter.notifyDataSetChanged()
     }
 
-    private fun filterTags() {
-        if (tags.isEmpty()) {
-            eventListParsed.clear()
-            eventListParsed.addAll(eventList)
-            adapter.notifyDataSetChanged()
-            populateChips()
-        }
-        else {
-            eventListParsed.clear()
-            val itemBuffer = arrayListOf<EventItem>()
-            tags.forEach { tag ->
-                eventList.forEach { item ->
-                    if (item.tags.contains(tag) && !eventListParsed.contains(item)) {
-                        itemBuffer.add(item)
-                    }
+    /**
+     * Utility function to filter out items based on query
+     * @param query Search query
+     */
+    private fun filterSearch(items: ArrayList<EventItem>, query: String): ArrayList<EventItem> {
+        return arrayListOf<EventItem>().apply {
+            addAll(
+                items.filter {
+                    it.title.toLowerCase(Locale.getDefault()).contains(query.toLowerCase(Locale.getDefault()))
                 }
-                eventListParsed.addAll(itemBuffer)
-                itemBuffer.clear()
+            )
+        }
+    }
+
+
+    private fun filterTags(items: ArrayList<EventItem>, queryTags: ArrayList<String>): ArrayList<EventItem> {
+        val itemsToRemove = arrayListOf<EventItem>()
+        queryTags.forEach { tag->
+            items.forEach { item ->
+                if (!item.tags.contains(tag)) {
+                    itemsToRemove.add(item)
+                }
             }
-            adapter.notifyDataSetChanged()
+        }
+        return items.apply {
+            removeAll(itemsToRemove)
         }
     }
 
@@ -144,7 +151,7 @@ class SearchFragment: Fragment() {
                 tags.removeAt(index)
                 binding.chipGroup.removeAllViews()
                 populateChips()
-                filterTags()
+                updateData()
             }
             binding.chipGroup.addView(chip)
         }
