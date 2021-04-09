@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="background">#FFFFFF</color>
+    <color name="disabled">#5AFFFFFF</color>
     <color name="background_sheet">#FFFFFF</color>
     <color name="accent">#246BFD</color>
     <color name="accent_light">#26246BFD</color>
