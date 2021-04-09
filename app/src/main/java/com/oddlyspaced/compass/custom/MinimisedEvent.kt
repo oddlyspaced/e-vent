@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 import com.oddlyspaced.compass.R
 import com.oddlyspaced.compass.databinding.LayoutCustomButtonBinding
 import com.oddlyspaced.compass.databinding.LayoutEventMinBinding
@@ -54,7 +55,7 @@ class MinimisedEvent: CardView {
 
     private fun init(context: Context) {
         binding = LayoutEventMinBinding.inflate(LayoutInflater.from(context), this, true)
-        binding.consEventMin.setBackgroundColor(Color.parseColor("#FFFFFF"))
+        binding.consEventMin.setBackgroundColor(ContextCompat.getColor(context, R.color.event_card_background))
         this.elevation = DimensionUtils.floatToDp(context, 2F)
         this.radius = DimensionUtils.floatToDp(context, 12F)
     }

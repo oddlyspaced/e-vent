@@ -5,4 +5,5 @@
     <color name="text_dark">#181A20</color>
     <color name="icon_background">@color/text_dark</color>
     <color name="text_light">#FFFFFF</color>
+    <color name="event_card_background">#efefef</color>
 </resources>
