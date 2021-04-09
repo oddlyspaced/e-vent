@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.oddlyspaced.compass.R
 import com.oddlyspaced.compass.databinding.LayoutTagBinding
 
-class CustomTagsAdapter(private val items: Array<String>): RecyclerView.Adapter<CustomTagsAdapter.TagViewHolder>() {
+class CustomTagsAdapter(private val items: Array<String>, private val onClick: (String) -> Unit, private val onLongClick: (String) -> Unit): RecyclerView.Adapter<CustomTagsAdapter.TagViewHolder>() {
 
     inner class TagViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         private val binding = LayoutTagBinding.bind(itemView)
@@ -19,7 +19,16 @@ class CustomTagsAdapter(private val items: Array<String>): RecyclerView.Adapter<
     }
 
     override fun onBindViewHolder(holder: TagViewHolder, position: Int) {
-        holder.text.text = items[position]
+        items[position].let { tag ->
+            holder.text.text = tag
+            holder.itemView.rootView.setOnClickListener {
+                onClick(tag)
+            }
+            holder.itemView.rootView.setOnLongClickListener {
+                onLongClick(tag)
+                true
+            }
+        }
     }
 
     override fun getItemCount(): Int = items.size
