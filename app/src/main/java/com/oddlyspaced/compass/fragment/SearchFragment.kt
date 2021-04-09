@@ -13,6 +13,7 @@ import com.oddlyspaced.compass.databinding.FragmentOverviewBinding
 import com.oddlyspaced.compass.databinding.FragmentSearchBinding
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 
+// TODO : Add filter for sorting events by date
 class SearchFragment: Fragment() {
 
     private lateinit var binding: FragmentSearchBinding
