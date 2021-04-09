@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="background">#FFFFFF</color>
+    <color name="background_sheet">#FFFFFF</color>
     <color name="accent">#246BFD</color>
+    <color name="accent_light">#26246BFD</color>
     <color name="text_dark">#181A20</color>
     <color name="icon_background">@color/text_dark</color>
     <color name="text_light">#FFFFFF</color>
