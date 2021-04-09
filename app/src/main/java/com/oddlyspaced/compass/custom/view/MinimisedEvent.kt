@@ -42,6 +42,10 @@ class MinimisedEvent: CardView {
         }
 
     var tags = arrayOf("Android", "App")
+        set(value) {
+            field = value
+            binding.rvEventTags.adapter = CustomTagsAdapter(value)
+        }
 
     constructor(ctx: Context) : super(ctx) {
         init(ctx)
