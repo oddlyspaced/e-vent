@@ -6,7 +6,9 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.oddlyspaced.compass.R
+import com.oddlyspaced.compass.custom.adapter.CustomTagsAdapter
 import com.oddlyspaced.compass.databinding.LayoutCustomButtonBinding
 import com.oddlyspaced.compass.databinding.LayoutEventMinBinding
 import com.oddlyspaced.compass.util.DimensionUtils
@@ -39,18 +41,18 @@ class MinimisedEvent: CardView {
             binding.imgEventLogo.setImageResource(value)
         }
 
+    var tags = arrayOf("Android", "App")
+
     constructor(ctx: Context) : super(ctx) {
         init(ctx)
     }
 
     constructor(ctx: Context, attr: AttributeSet) : super(ctx, attr) {
         init(ctx)
-        setAttr(attr)
     }
 
     constructor(ctx: Context, attr: AttributeSet, defStyleAttr: Int) : super(ctx, attr, defStyleAttr) {
         init(ctx)
-        setAttr(attr)
     }
 
     private fun init(context: Context) {
@@ -58,19 +60,9 @@ class MinimisedEvent: CardView {
         binding.consEventMin.setBackgroundColor(ContextCompat.getColor(context, R.color.event_card_background))
         this.elevation = DimensionUtils.floatToDp(context, 2F)
         this.radius = DimensionUtils.floatToDp(context, 12F)
-    }
 
-    private fun setAttr(attributes: AttributeSet) {
-//        val typedArray = context.obtainStyledAttributes(attributes, R.styleable.CustomButton, 0, 0)
-//        try {
-//            binding.txCustomButton.text = typedArray.getString(R.styleable.CustomButton_text)
-//        }
-//        catch (e: Exception) {
-//            e.printStackTrace()
-//        }
-//        finally {
-//            typedArray.recycle()
-//        }
+        binding.rvEventTags.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvEventTags.adapter = CustomTagsAdapter(tags)
     }
 
 }
