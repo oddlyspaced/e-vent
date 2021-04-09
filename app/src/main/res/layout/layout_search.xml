@@ -11,13 +11,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/etSearch"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toTopOf="@+id/etSearch"
         app:srcCompat="@drawable/ic_search" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/etSearch"
         style="@style/EditText.Default"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
