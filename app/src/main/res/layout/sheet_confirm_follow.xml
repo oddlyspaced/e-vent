@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_sheet">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glTop8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="32dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glLeft8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="32dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="32dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        style="@style/TextAppearance.Heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Follow Tag?"
+        app:layout_constraintStart_toStartOf="@+id/glLeft8"
+        app:layout_constraintTop_toTopOf="@+id/glTop8" />
+
+    <com.oddlyspaced.compass.custom.view.CustomButton
+        android:id="@+id/customButton2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+        app:layout_constraintStart_toEndOf="@+id/customButton3"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:text="Confirm" />
+
+    <com.oddlyspaced.compass.custom.view.CustomButton
+        android:id="@+id/customButton3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="64dp"
+        app:isSecondary="true"
+        app:backgroundColor="@color/background_sheet"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/customButton2"
+        app:layout_constraintStart_toStartOf="@+id/glLeft8"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:text="Cancel" />
+
+    <TextView
+        android:id="@+id/textView10"
+        style="@style/TextAppearance.SubTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Do you want to follow 'Hackathon'?"
+        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+        app:layout_constraintStart_toStartOf="@+id/glLeft8"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
