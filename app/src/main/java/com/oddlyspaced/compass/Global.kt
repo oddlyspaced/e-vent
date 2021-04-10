@@ -17,7 +17,9 @@ class Global {
                 "Dome building",
                 1001,
                 false,
-                arrayListOf("Android")
+                arrayListOf("Android"),
+                "Ipsum Lore",
+                "linkkk"
             ),
             EventItem(
                 2,
@@ -27,7 +29,9 @@ class Global {
                 "Dome building",
                 1001,
                 false,
-                arrayListOf("jam", "app")
+                arrayListOf("jam", "app"),
+                "Ipsum Lore",
+                "linkkk"
             ),
             EventItem(
                 3,
@@ -37,7 +41,9 @@ class Global {
                 "Dome building",
                 1001,
                 false,
-                arrayListOf("hacking", "web")
+                arrayListOf("hacking", "web"),
+                "Ipsum Lore",
+                "linkkk"
             ),
             EventItem(
                 4,
@@ -47,7 +53,9 @@ class Global {
                 "Dome building",
                 1001,
                 true,
-                arrayListOf("Android")
+                arrayListOf("Android"),
+                "Ipsum Lore",
+                "linkkk"
             ),
             EventItem(
                 5,
@@ -57,7 +65,9 @@ class Global {
                 "Dome building",
                 1001,
                 true,
-                arrayListOf("jam", "app")
+                arrayListOf("jam", "app"),
+                "Ipsum Lore",
+                "linkkk"
             ),
             EventItem(
                 6,
@@ -67,7 +77,9 @@ class Global {
                 "Dome building",
                 1001,
                 true,
-                arrayListOf("hacking", "web")
+                arrayListOf("hacking", "web"),
+                "Ipsum Lore",
+                "linkkk"
             ),
         )
     }
