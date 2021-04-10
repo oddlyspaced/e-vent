@@ -1,0 +1,31 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "clubname": "ACM",
+      "clubLogo": "https://github.com/oddlyspaced/M-pal/blob/main/media/acm.png?raw=true",
+      "eventid": 1000,
+      "title": "Mini Hacks MUJ",
+      "time": "January 29th",
+      "location": "Online",
+      "intra": true,
+      "tags": [
+        "hackathon",
+        "development"
+      ],
+      "banner": "https://res.cloudinary.com/dashed/image/upload/v1611051427/acm/klgjkuqdehb2g4buvprx.png",
+      "description": "MUJ ACM S-CHAP brings to you a series of mini Hackathons to prep you up for the bigger shows.\nCompete with your team of 4 on 29th, 30th and 31st January and drill your coding skills to come out as best creators!\nHackathon Day - 0 is 29th January. Further information would be communicated to the participants\n++Free for ACM Members++ Non ACM Members: Fee Mentioned\nPrizes are cash and kind. Prize pool may increase!\nLast date to register: 28th January, 2021",
+      "registrationLink": "https://www.google.com",
+      "contact": [
+        {
+          "name": "Vansh Gupta",
+          "phone": "9990100640"
+        },
+        {
+          "name": "Abhirup Chakraborty",
+          "phone": "8586070049"
+        }
+      ]
+    }
+  ]
+}
