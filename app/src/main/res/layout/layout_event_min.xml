@@ -13,6 +13,16 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.75" />
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgEventLogo"
+        app:layout_constraintEnd_toEndOf="@+id/imgEventLogo"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/imgEventLogo" />
+
     <ImageView
         android:id="@+id/imgEventLogo"
         android:layout_width="0dp"

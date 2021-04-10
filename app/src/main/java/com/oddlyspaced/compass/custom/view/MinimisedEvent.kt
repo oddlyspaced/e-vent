@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.oddlyspaced.compass.R
 import com.oddlyspaced.compass.custom.adapter.CustomTagsAdapter
 import com.oddlyspaced.compass.databinding.LayoutEventMinBinding
@@ -36,12 +37,6 @@ class MinimisedEvent: CardView {
         set(value) {
             field = value
             binding.txEventLocation.text = value
-        }
-
-    var logo = R.drawable.dsc
-        set(value) {
-            field = value
-            binding.imgEventLogo.setImageResource(value)
         }
 
     var tags = arrayOf("Android", "App")
@@ -92,5 +87,13 @@ class MinimisedEvent: CardView {
     }
 
     fun getLogoImageView() = binding.imgEventLogo
+
+    fun setEventLogo(resId: Int) {
+        binding.imgEventLogo.setImageResource(resId)
+    }
+
+    fun setEventLogo(uri: String) {
+        Glide.with(context).load(uri).into(binding.imgEventLogo)
+    }
 
 }
