@@ -13,12 +13,15 @@ import androidx.fragment.app.setFragmentResult
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.oddlyspaced.compass.databinding.SheetConfirmFollowBinding
 import com.oddlyspaced.compass.databinding.SheetFilterBinding
+import java.util.*
 
 class FollowBottomSheetFragment: BottomSheetDialogFragment() {
 
     private lateinit var binding: SheetConfirmFollowBinding
 
     companion object {
+        const val TAG_NAME = "tag_name"
+
         @JvmStatic
         fun newInstance(): FollowBottomSheetFragment {
             return FollowBottomSheetFragment()
@@ -32,7 +35,11 @@ class FollowBottomSheetFragment: BottomSheetDialogFragment() {
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
+        val tag = arguments?.getString(TAG_NAME) ?: ""
+        val tx = "Do you want to follow '${toCamelCase(tag)}'?"
+        binding.txFollowTag.text = tx
     }
+
+    private fun toCamelCase(str: String) = "${str[0].toUpperCase()}${str.substring(1).toLowerCase(Locale.getDefault())}"
 
 }

@@ -43,7 +43,7 @@
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
         app:layout_constraintStart_toEndOf="@+id/customButton3"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/txFollowTag"
         app:text="Confirm" />
 
     <com.oddlyspaced.compass.custom.view.CustomButton
@@ -58,11 +58,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/customButton2"
         app:layout_constraintStart_toStartOf="@+id/glLeft8"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/txFollowTag"
         app:text="Cancel" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/txFollowTag"
         style="@style/TextAppearance.SubTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
