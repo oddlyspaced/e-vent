@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -30,6 +31,7 @@ class SearchFragment: Fragment() {
     private var searchQuery = ""
     // list of tags for primary filtering
     private val tags = arrayListOf<String>()
+    private var eventType = 3
 
     private lateinit var adapter: EventAdapter
 
@@ -56,7 +58,7 @@ class SearchFragment: Fragment() {
      */
     private fun initPreLoadUi() {
         binding.imgSearchFilter.setOnClickListener {
-            fragmentManager?.let {
+            parentFragmentManager.let {
                 FilterBottomSheetFragment.newInstance().apply {
                     show(it, "FilterSheet")
                 }
@@ -97,6 +99,11 @@ class SearchFragment: Fragment() {
         }
 
         populateChips()
+
+        parentFragmentManager.setFragmentResultListener(FilterBottomSheetFragment.RESULT_EVENT_TYPE, this) { _, bundle ->
+            eventType = bundle.getInt(FilterBottomSheetFragment.RESULT_EVENT_TYPE_VALUE, 3)
+            updateData()
+        }
     }
 
     /**
@@ -105,7 +112,7 @@ class SearchFragment: Fragment() {
     private fun updateData() {
         eventListParsed.clear()
         eventListParsed.apply {
-            addAll(filterTags(filterSearch(eventList, searchQuery), tags))
+            addAll(filterLocation(filterTags(filterSearch(eventList, searchQuery), tags), eventType))
         }
         adapter.notifyDataSetChanged()
     }
@@ -124,7 +131,6 @@ class SearchFragment: Fragment() {
         }
     }
 
-
     private fun filterTags(items: ArrayList<EventItem>, queryTags: ArrayList<String>): ArrayList<EventItem> {
         val itemsToRemove = arrayListOf<EventItem>()
         queryTags.forEach { tag->
@@ -136,6 +142,19 @@ class SearchFragment: Fragment() {
         }
         return items.apply {
             removeAll(itemsToRemove)
+        }
+    }
+
+    private fun filterLocation(items: ArrayList<EventItem>, typeEvent: Int): ArrayList<EventItem> {
+        return when(typeEvent) {
+            // all
+            3 -> items
+            // intra
+            else -> arrayListOf<EventItem>().apply {
+                addAll(items.filter {
+                    it.isIntra == FilterBottomSheetFragment.EVENT_TYPE_VALUES[typeEvent] ?: false
+                })
+            }
         }
     }
 
