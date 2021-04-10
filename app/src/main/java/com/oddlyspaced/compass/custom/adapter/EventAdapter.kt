@@ -33,16 +33,27 @@ class EventAdapter(private val list: ArrayList<EventItem>, private val activity:
     }
 
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
+        val item = list[position]
+
         holder.itemView.context.let { context ->
             holder.event.setOnClickListener {
                 val activityOptionsCompat = activity?.let { activity ->
                     ActivityOptionsCompat.makeSceneTransitionAnimation(
                         activity, holder.event.getLogoImageView(), "detailsLogo")
                 }
-                context.startActivity(Intent(context, EventDetailActivity::class.java), activityOptionsCompat?.toBundle())
+                val intent = Intent(context, EventDetailActivity::class.java).apply {
+                    putExtra(EventDetailActivity.CLUB_LOGO, item.clubLogo)
+                    putExtra(EventDetailActivity.CLUB_NAME, item.clubName)
+                    putExtra(EventDetailActivity.EVENT_NAME, item.title)
+                    putExtra(EventDetailActivity.EVENT_DATE, item.time)
+                    putExtra(EventDetailActivity.EVENT_LOCATION, item.location)
+                    putExtra(EventDetailActivity.EVENT_BANNER, item.banner)
+                    putExtra(EventDetailActivity.EVENT_DESC, item.description)
+                    putExtra(EventDetailActivity.REGIS_LINK, item.registrationLink)
+                }
+                context.startActivity(intent, activityOptionsCompat?.toBundle())
             }
         }
-        val item = list[position]
         holder.event.title = item.title
         holder.event.location = item.location
         holder.event.time = item.time
