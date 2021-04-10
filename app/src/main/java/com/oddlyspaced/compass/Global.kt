@@ -1,91 +1,34 @@
 package com.oddlyspaced.compass
 
+import com.oddlyspaced.compass.modal.EventContact
 import com.oddlyspaced.compass.modal.EventItem
 
 class Global {
     companion object {
-
-        const val VALUE_TYPE_EVENT_INTER = 1
-        const val VALUE_TYPE_EVENT_INTRA = 2
-
         fun getMockData() = arrayListOf(
             EventItem(
                 1,
-                "Hackathon inter",
-                "https://raw.githubusercontent.com/oddlyspaced/covid19-android/master/screenshots/icon.png",
-                "April 08 - 12:00 PM",
-                "Dome building",
-                1001,
-                false,
-                arrayListOf("Android"),
-                "Ipsum Lore",
-                "linkkk",
-                "linkkk"
-            ),
-            EventItem(
-                2,
-                "Study Jam inter",
-                "https://raw.githubusercontent.com/oddlyspaced/covid19-android/master/screenshots/icon.png",
-                "April 08 - 12:00 PM",
-                "Dome building",
-                1001,
-                false,
-                arrayListOf("jam", "app"),
-                "Ipsum Lore",
-                "linkkk",
-                "linkkk"
-            ),
-            EventItem(
-                3,
-                "Workshop inter",
-                "https://raw.githubusercontent.com/oddlyspaced/covid19-android/master/screenshots/icon.png",
-                "April 08 - 12:00 PM",
-                "Dome building",
-                1001,
-                false,
-                arrayListOf("hacking", "web"),
-                "Ipsum Lore",
-                "linkkk",
-                "linkkk"
-            ),
-            EventItem(
-                4,
-                "Hackathon 123 intra",
-                "https://raw.githubusercontent.com/oddlyspaced/covid19-android/master/screenshots/icon.png",
-                "April 08 - 12:00 PM",
-                "Dome building",
-                1001,
+                "ACM",
+                "https://github.com/oddlyspaced/M-pal/blob/main/media/acm.png?raw=true",
+                1000,
+                "Mini Hacks MUJ",
+                "January 29th",
+                "Online",
                 true,
-                arrayListOf("Android"),
-                "Ipsum Lore",
-                "linkkk",
-                "linkkk"
-            ),
-            EventItem(
-                5,
-                "Study Jam intra",
-                "https://raw.githubusercontent.com/oddlyspaced/covid19-android/master/screenshots/icon.png",
-                "April 08 - 12:00 PM",
-                "Dome building",
-                1001,
-                true,
-                arrayListOf("jam", "app"),
-                "Ipsum Lore",
-                "linkkk",
-                "linkkk"
-            ),
-            EventItem(
-                6,
-                "Worksho p intra",
-                "https://raw.githubusercontent.com/oddlyspaced/covid19-android/master/screenshots/icon.png",
-                "April 08 - 12:00 PM",
-                "Dome building",
-                1001,
-                true,
-                arrayListOf("hacking", "web"),
-                "Ipsum Lore",
-                "linkkk",
-                "linkkk",
+                arrayListOf("hackathon", "development"),
+                "https://res.cloudinary.com/dashed/image/upload/v1611051427/acm/klgjkuqdehb2g4buvprx.png",
+                "MUJ ACM S-CHAP brings to you a series of mini Hackathons to prep you up for the bigger shows.\nCompete with your team of 4 on 29th, 30th and 31st January and drill your coding skills to come out as best creators!\nHackathon Day - 0 is 29th January. Further information would be communicated to the participants\n++Free for ACM Members++ Non ACM Members: Fee Mentioned\nPrizes are cash and kind. Prize pool may increase!\nLast date to register: 28th January, 2021",
+                "https://www.google.com",
+                arrayListOf(
+                    EventContact(
+                        "Vansh Gupta",
+                        "9990100640",
+                    ),
+                    EventContact(
+                        "Abhurup",
+                        "8586070049"
+                    )
+                )
             ),
         )
     }
