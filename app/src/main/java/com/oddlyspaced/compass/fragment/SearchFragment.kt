@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -83,8 +84,13 @@ class SearchFragment: Fragment() {
                     updateData()
                 }
             },
-            {
-
+            { tag ->
+                parentFragmentManager.let {
+                    FollowBottomSheetFragment.newInstance().apply {
+                        arguments = bundleOf(FollowBottomSheetFragment.TAG_NAME to tag)
+                        show(it, "FollowTag")
+                    }
+                }
             })
         binding.rvSearchEvents.layoutManager = LinearLayoutManager(context)
         binding.rvSearchEvents.adapter = adapter
