@@ -53,7 +53,7 @@ class EventAdapter(private val list: ArrayList<EventItem>, private val activity:
             holder.event.onTagLongClick = it
         }
         holder.event.tags = item.tags.toTypedArray()
-//        holder.event.logo = item.img
+        holder.event.setEventLogo(item.clubLogo)
     }
 
     override fun getItemCount(): Int = list.size
