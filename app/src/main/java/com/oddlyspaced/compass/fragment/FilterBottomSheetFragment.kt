@@ -69,7 +69,7 @@ class FilterBottomSheetFragment: BottomSheetDialogFragment() {
         binding.cbFilterFree.isChecked = true
         binding.cbFilterPaid.isChecked = true
 
-        binding.viewFilterScopeDisable.setOnTouchListener { _, _ ->
+        binding.viewFilterScopeDisable.setOnClickListener {
             Toast.makeText(context, "Inter College events must be selected for this to work!", Toast.LENGTH_SHORT).show()
             true
         }
