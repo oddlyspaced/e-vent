@@ -19,6 +19,7 @@ class Global {
                 false,
                 arrayListOf("Android"),
                 "Ipsum Lore",
+                "linkkk",
                 "linkkk"
             ),
             EventItem(
@@ -31,6 +32,7 @@ class Global {
                 false,
                 arrayListOf("jam", "app"),
                 "Ipsum Lore",
+                "linkkk",
                 "linkkk"
             ),
             EventItem(
@@ -43,6 +45,7 @@ class Global {
                 false,
                 arrayListOf("hacking", "web"),
                 "Ipsum Lore",
+                "linkkk",
                 "linkkk"
             ),
             EventItem(
@@ -55,6 +58,7 @@ class Global {
                 true,
                 arrayListOf("Android"),
                 "Ipsum Lore",
+                "linkkk",
                 "linkkk"
             ),
             EventItem(
@@ -67,6 +71,7 @@ class Global {
                 true,
                 arrayListOf("jam", "app"),
                 "Ipsum Lore",
+                "linkkk",
                 "linkkk"
             ),
             EventItem(
@@ -79,7 +84,8 @@ class Global {
                 true,
                 arrayListOf("hacking", "web"),
                 "Ipsum Lore",
-                "linkkk"
+                "linkkk",
+                "linkkk",
             ),
         )
     }

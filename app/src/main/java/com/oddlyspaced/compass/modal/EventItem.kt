@@ -10,5 +10,6 @@ data class EventItem(
     val isIntra: Boolean,
     val tags: ArrayList<String>,
     val description: String,
-    val registrationLink: String
+    val registrationLink: String,
+    val banner: String
 )
