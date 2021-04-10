@@ -33,7 +33,7 @@ class FollowFragment: Fragment() {
         populateChips(tags)
 
         binding.rvFollowEvents.layoutManager = LinearLayoutManager(context)
-        binding.rvFollowEvents.adapter = EventAdapter(Global.getMockData())
+        binding.rvFollowEvents.adapter = EventAdapter(Global.getMockData(), activity)
     }
 
     private fun populateChips(chipTitles: ArrayList<String>) {

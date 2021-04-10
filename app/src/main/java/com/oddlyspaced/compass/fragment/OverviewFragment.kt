@@ -35,11 +35,11 @@ class OverviewFragment: Fragment() {
         }
         val linearLayoutManager = LinearLayoutManager(context)
         binding.rvOverviewToday.layoutManager = cardStackLayoutManager
-        binding.rvOverviewToday.adapter = EventAdapter(Global.getMockData())
+        binding.rvOverviewToday.adapter = EventAdapter(Global.getMockData(), activity)
         
         binding.imgOverviewExpand.setOnClickListener {
             binding.rvOverviewToday.layoutManager = if (binding.rvOverviewToday.layoutManager is CardStackLayoutManager) linearLayoutManager else cardStackLayoutManager
-            binding.rvOverviewToday.adapter = EventAdapter(Global.getMockData())
+            binding.rvOverviewToday.adapter = EventAdapter(Global.getMockData(), activity)
         }
     }
 }

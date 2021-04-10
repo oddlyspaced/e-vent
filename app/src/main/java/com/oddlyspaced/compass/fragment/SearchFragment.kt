@@ -75,6 +75,7 @@ class SearchFragment: Fragment() {
     private fun initPostLoadUi() {
         adapter = EventAdapter(
             eventListParsed,
+            activity,
             { tag ->
                 if (!tags.contains(tag)) {
                     tags.add(tag)

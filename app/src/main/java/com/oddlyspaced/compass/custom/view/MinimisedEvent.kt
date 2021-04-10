@@ -91,4 +91,6 @@ class MinimisedEvent: CardView {
         binding.rvEventTags.adapter = CustomTagsAdapter(tags, onTagClicked, onTagLongClick)
     }
 
+    fun getLogoImageView() = binding.imgEventLogo
+
 }
