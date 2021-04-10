@@ -37,6 +37,11 @@ class CustomButton: CardView {
         val typedArray = context.obtainStyledAttributes(attributes, R.styleable.CustomButton, 0, 0)
         try {
             binding.txCustomButton.text = typedArray.getString(R.styleable.CustomButton_text)
+            typedArray.getBoolean(R.styleable.CustomButton_isSecondary, false).let { secondary ->
+                binding.consCustomButton.setBackgroundColor(context.getColor(if (secondary) R.color.background else R.color.accent))
+                binding.txCustomButton.setTextColor(context.getColor(if (secondary) R.color.text_dark else R.color.text_light))
+                this.elevation = DimensionUtils.floatToDp(context, if (secondary) 0F else 8F)
+            }
         }
         catch (e: Exception) {
             e.printStackTrace()
