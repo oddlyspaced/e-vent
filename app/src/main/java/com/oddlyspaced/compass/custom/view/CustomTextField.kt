@@ -8,7 +8,6 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import com.oddlyspaced.compass.R
 import com.oddlyspaced.compass.databinding.LayoutCustomTextFieldBinding
-import java.lang.Exception
 
 // Custom Text Field with modified layout
 class CustomTextField: ConstraintLayout {

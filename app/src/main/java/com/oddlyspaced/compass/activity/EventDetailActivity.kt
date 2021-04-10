@@ -1,7 +1,7 @@
 package com.oddlyspaced.compass.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.oddlyspaced.compass.R
 
 class EventDetailActivity : AppCompatActivity() {

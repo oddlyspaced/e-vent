@@ -1,7 +1,6 @@
 package com.oddlyspaced.compass.custom.adapter
 
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.oddlyspaced.compass.R
 import com.oddlyspaced.compass.activity.EventDetailActivity
 import com.oddlyspaced.compass.databinding.ItemEventBinding
-import com.oddlyspaced.compass.fragment.SearchFragment
 import com.oddlyspaced.compass.modal.EventItem
 
 class EventAdapter(private val list: ArrayList<EventItem>): RecyclerView.Adapter<EventAdapter.EventViewHolder>() {

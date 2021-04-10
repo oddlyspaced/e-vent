@@ -1,8 +1,8 @@
 package com.oddlyspaced.compass.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.oddlyspaced.compass.R
 
 class MainActivity : AppCompatActivity() {

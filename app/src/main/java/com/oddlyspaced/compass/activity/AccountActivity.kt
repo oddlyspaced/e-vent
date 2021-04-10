@@ -1,8 +1,7 @@
 package com.oddlyspaced.compass.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.oddlyspaced.compass.R
+import androidx.appcompat.app.AppCompatActivity
 import com.oddlyspaced.compass.databinding.ActivityAccountBinding
 import com.oddlyspaced.compass.fragment.AskNumFragment
 

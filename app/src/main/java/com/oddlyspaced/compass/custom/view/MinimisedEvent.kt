@@ -1,7 +1,6 @@
 package com.oddlyspaced.compass.custom.view
 
 import android.content.Context
-import android.graphics.Color
 import android.util.AttributeSet
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,7 +9,6 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.oddlyspaced.compass.R
 import com.oddlyspaced.compass.custom.adapter.CustomTagsAdapter
-import com.oddlyspaced.compass.databinding.LayoutCustomButtonBinding
 import com.oddlyspaced.compass.databinding.LayoutEventMinBinding
 import com.oddlyspaced.compass.util.DimensionUtils
 

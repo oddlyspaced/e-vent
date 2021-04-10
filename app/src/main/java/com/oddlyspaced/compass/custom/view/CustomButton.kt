@@ -4,9 +4,9 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.cardview.widget.CardView
-import com.oddlyspaced.compass.util.DimensionUtils
 import com.oddlyspaced.compass.R
 import com.oddlyspaced.compass.databinding.LayoutCustomButtonBinding
+import com.oddlyspaced.compass.util.DimensionUtils
 
 class CustomButton: CardView {
 
