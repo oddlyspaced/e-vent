@@ -18,8 +18,11 @@ class FilterBottomSheetFragment: BottomSheetDialogFragment() {
     private lateinit var binding: SheetFilterBinding
 
     companion object {
+        // Result name key for event combination
         const val RESULT_EVENT_TYPE = "event_type"
+        // Value pair key for Event result bundle
         const val RESULT_EVENT_TYPE_VALUE = "event_type_value"
+        // Pair which reflects calculation and inter/intra type
         val EVENT_TYPE_VALUES = mapOf(
             // calc , intra
             Pair(2, true),
@@ -77,6 +80,9 @@ class FilterBottomSheetFragment: BottomSheetDialogFragment() {
         setCostTypeResult()
     }
 
+    /**
+     * Uses calculated event type combo value to check if at least one is checked
+     */
     private fun checkEventTypeChecks() {
         if (calculateEventTypeTotal() == 0) {
             Toast.makeText(context, "At least one should be selected!", Toast.LENGTH_SHORT).show()
@@ -91,6 +97,9 @@ class FilterBottomSheetFragment: BottomSheetDialogFragment() {
         }
     }
 
+    /**
+     * Cumulatively calculates integer value for event type combo
+     */
     private fun calculateEventTypeTotal(): Int {
         // 0 -> not possible
         // 1 -> inter college
@@ -113,6 +122,9 @@ class FilterBottomSheetFragment: BottomSheetDialogFragment() {
         return value
     }
 
+    /**
+     * Sets event combo result
+     */
     private fun setEventTypeResult() {
         setFragmentResult(RESULT_EVENT_TYPE, bundleOf(RESULT_EVENT_TYPE_VALUE to calculateEventTypeTotal()))
     }
