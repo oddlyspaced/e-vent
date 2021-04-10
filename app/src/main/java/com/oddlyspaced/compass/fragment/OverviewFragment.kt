@@ -10,7 +10,6 @@ import com.oddlyspaced.compass.Global
 import com.oddlyspaced.compass.R
 import com.oddlyspaced.compass.custom.adapter.EventAdapter
 import com.oddlyspaced.compass.databinding.FragmentOverviewBinding
-import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 
 class OverviewFragment: Fragment() {
 
@@ -29,16 +28,11 @@ class OverviewFragment: Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val cardStackLayoutManager = CardStackLayoutManager(context).apply {
-            setCanScrollHorizontal(false)
-            setCanScrollVertical(false)
-        }
-        val linearLayoutManager = LinearLayoutManager(context)
-        binding.rvOverviewToday.layoutManager = cardStackLayoutManager
+        binding.rvOverviewToday.layoutManager = LinearLayoutManager(context)
         binding.rvOverviewToday.adapter = EventAdapter(Global.getMockData(), activity)
         
         binding.imgOverviewExpand.setOnClickListener {
-            binding.rvOverviewToday.layoutManager = if (binding.rvOverviewToday.layoutManager is CardStackLayoutManager) linearLayoutManager else cardStackLayoutManager
+            binding.rvOverviewToday.layoutManager = LinearLayoutManager(context)
             binding.rvOverviewToday.adapter = EventAdapter(Global.getMockData(), activity)
         }
     }
