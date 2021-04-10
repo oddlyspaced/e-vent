@@ -7,5 +7,6 @@ data class EventItem(
     val time: String,
     val location: String,
     val eventId: Int,
+    val isIntra: Boolean,
     val tags: ArrayList<String>
 )
