@@ -2,6 +2,7 @@
 <resources>
     <color name="background">#FFFFFF</color>
     <color name="disabled">#5AFFFFFF</color>
+    <color name="error">#f44336</color>
     <color name="background_sheet">#FFFFFF</color>
     <color name="accent">#246BFD</color>
     <color name="accent_light">#26246BFD</color>
