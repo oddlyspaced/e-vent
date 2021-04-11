@@ -1,10 +1,12 @@
 package com.oddlyspaced.compass.custom.view
 
 import android.content.Context
+import android.text.InputType
 import android.util.AttributeSet
 import android.util.Log
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.isVisible
 import com.oddlyspaced.compass.R
 import com.oddlyspaced.compass.databinding.LayoutCustomTextFieldBinding
@@ -33,6 +35,7 @@ class CustomTextField: ConstraintLayout {
 
     private fun init(context: Context) {
         binding = LayoutCustomTextFieldBinding.inflate(LayoutInflater.from(context), this, true)
+        binding.etCustomTextField.typeface = ResourcesCompat.getFont(context, R.font.inter_semibold)
     }
 
     private fun setAttr(attributes: AttributeSet) {
@@ -42,6 +45,10 @@ class CustomTextField: ConstraintLayout {
             binding.etCustomTextField.hint = typedArray.getString(R.styleable.CustomTextField_hint)
             binding.imgCustomTextField.setImageResource(typedArray.getResourceId(R.styleable.CustomTextField_iconSrc, R.drawable.ic_close))
             binding.imgCustomTextField.isVisible = typedArray.getBoolean(R.styleable.CustomTextField_iconVisible, true)
+            val inputTypePassword = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            val inputTypeText = InputType.TYPE_CLASS_TEXT
+            binding.etCustomTextField.inputType = if (typedArray.getBoolean(R.styleable.CustomTextField_isPassword, false)) inputTypePassword else inputTypeText
+            binding.etCustomTextField.typeface = ResourcesCompat.getFont(context, R.font.inter_semibold)
         }
         catch (e: Exception) {
             Log.e(TAG, "------------------------")
