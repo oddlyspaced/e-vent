@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
@@ -43,6 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:hint="@string/hint_name"
+        app:iconVisible="false"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/glLeft"
         app:layout_constraintTop_toBottomOf="@+id/txSignUpSubtext"
@@ -54,6 +54,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:hint="@string/hint_password"
+        app:isPassword="true"
+        app:iconSrc="@drawable/ic_show"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/glLeft"
         app:layout_constraintTop_toBottomOf="@+id/ctfName"
