@@ -54,6 +54,30 @@ class Global {
                     )
                 )
             ),
+            EventItem(
+                1003,
+                "Cinefelia",
+                "https://www.instagram.com/cinefiliamuj/",
+                "iKhlaas",
+                "April 29th",
+                "TMA PAI Auditorium",
+                true,
+                1,
+                arrayListOf("StagePlay", "Acting"),
+                "https://yt3.ggpht.com/ytc/AAUvwnjlYMk4PgDzmLX7608xjQM7Ywjv0Zekh2mcT4nRIg=s900-c-k-c0x00ffffff-no-rj",
+                "They say that \"The world is a stage\" but we in Cinefilia feel that the stage is our world. It is an intersection between visible and invisible worlds. \nAs the name suggests, Ikhlaas symbolises honesty, truthfulness and playing a character wholeheartedly. Creates a true and a beautiful bond between a performer and audience. \nOur Stage plays have secured the first positions in many out house competitions and we continue to keep growing by writing our own scripts and learning by workshops conducted in the club itself.",
+                "https://www.google.com",
+                arrayListOf(
+                    EventContact(
+                        "Sahik Gupta",
+                        "9992300640",
+                    ),
+                    EventContact(
+                        "Abhurup",
+                        "8456070049"
+                    )
+                )
+            ),
         )
     }
 }
