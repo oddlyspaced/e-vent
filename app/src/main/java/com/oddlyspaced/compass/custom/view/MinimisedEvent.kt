@@ -1,13 +1,19 @@
 package com.oddlyspaced.compass.custom.view
 
 import android.content.Context
+import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.util.Log
 import android.view.LayoutInflater
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.DataSource
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.request.RequestListener
+import com.bumptech.glide.request.target.Target
 import com.oddlyspaced.compass.R
 import com.oddlyspaced.compass.custom.adapter.CustomTagsAdapter
 import com.oddlyspaced.compass.databinding.LayoutEventMinBinding
@@ -93,7 +99,35 @@ class MinimisedEvent: CardView {
     }
 
     fun setEventLogo(uri: String) {
-        Glide.with(context).load(uri).into(binding.imgEventLogo)
+        Glide
+            .with(context)
+            .load(uri)
+            .listener(object : RequestListener<Drawable> {
+                override fun onLoadFailed(
+                    e: GlideException?,
+                    model: Any?,
+                    target: Target<Drawable>?,
+                    isFirstResource: Boolean
+                ): Boolean {
+                    return false
+                }
+
+                override fun onResourceReady(
+                    resource: Drawable?,
+                    model: Any?,
+                    target: Target<Drawable>?,
+                    dataSource: DataSource?,
+                    isFirstResource: Boolean
+                ): Boolean {
+                    resource?.let {
+                        binding.imgEventLogo.setImageDrawable(it)
+                    }
+                    binding.progressBar.isVisible = false
+                    return true
+                }
+
+            })
+            .into(binding.imgEventLogo)
     }
 
 }
