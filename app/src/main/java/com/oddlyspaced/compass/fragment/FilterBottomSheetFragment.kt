@@ -78,6 +78,7 @@ class FilterBottomSheetFragment: BottomSheetDialogFragment() {
     override fun onDismiss(dialog: DialogInterface) {
         setEventTypeResult()
         setCostTypeResult()
+        super.onDismiss(dialog)
     }
 
     /**
