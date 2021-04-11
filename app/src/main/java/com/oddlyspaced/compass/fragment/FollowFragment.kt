@@ -15,7 +15,7 @@ import com.oddlyspaced.compass.databinding.FragmentFollowBinding
 class FollowFragment: Fragment() {
 
     private lateinit var binding: FragmentFollowBinding
-    private val tags = arrayListOf("DSC", "ACM", "IEEE", "Web Dev", "Android")
+    private val sampleTags = arrayListOf("tag1", "tag2")
 
     companion object {
         @JvmStatic
@@ -30,10 +30,12 @@ class FollowFragment: Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        populateChips(tags)
+        populateChips(sampleTags)
 
         binding.rvFollowEvents.layoutManager = LinearLayoutManager(context)
-        binding.rvFollowEvents.adapter = EventAdapter(Global.getMockData(), activity)
+        binding.rvFollowEvents.adapter = EventAdapter(ArrayList(Global.getMockData().filter { item ->
+            item.tags.containsAll(sampleTags)
+        }), activity)
     }
 
     private fun populateChips(chipTitles: ArrayList<String>) {
@@ -42,9 +44,9 @@ class FollowFragment: Fragment() {
             chip.text = str
             chip.setOnCloseIconClickListener {
                 binding.chipGroup.removeViewAt(index)
-                tags.removeAt(index)
+                sampleTags.removeAt(index)
                 binding.chipGroup.removeAllViews()
-                populateChips(tags)
+                populateChips(sampleTags)
             }
             binding.chipGroup.addView(chip)
         }
