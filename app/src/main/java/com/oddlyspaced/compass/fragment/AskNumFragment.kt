@@ -44,7 +44,8 @@ class AskNumFragment: Fragment() {
                     binding.txAskNumError.text = "Please enter proper Registration Number"
                 }
                 else -> {
-                    val fragment = SignUpFragment.newInstance().apply {
+
+                    val fragment = (if (regNum == "199303069") LoginFragment.newInstance() else SignUpFragment.newInstance()).apply {
                         arguments = bundleOf(SignUpFragment.REG_NUM to binding.customTextField.getText())
                     }
 
