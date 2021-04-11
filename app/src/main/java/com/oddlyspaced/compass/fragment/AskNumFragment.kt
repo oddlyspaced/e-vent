@@ -30,15 +30,31 @@ class AskNumFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         root = arguments?.getInt(ROOT)
         binding.customBtnContinue.setOnClickListener {
-            val fragment = SignUpFragment.newInstance().apply {
-                arguments = bundleOf(SignUpFragment.REG_NUM to binding.customTextField.getText())
-            }
+            checkSignup()
+        }
+    }
 
-            parentFragmentManager.beginTransaction().apply {
-                setCustomAnimations(R.anim.slide_in, R.anim.fade_out, R.anim.fade_in, R.anim.slide_out)
-                replace(root ?: binding.root.id, fragment)
-                addToBackStack("Signup")
-            }.commit()
+    private fun checkSignup() {
+        binding.customTextField.getText().let { regNum ->
+            when {
+                regNum.isEmpty() -> {
+                    binding.txAskNumError.text = "Please enter Registration Number!"
+                }
+                regNum.length != 9 -> {
+                    binding.txAskNumError.text = "Please enter proper Registration Number"
+                }
+                else -> {
+                    val fragment = SignUpFragment.newInstance().apply {
+                        arguments = bundleOf(SignUpFragment.REG_NUM to binding.customTextField.getText())
+                    }
+
+                    parentFragmentManager.beginTransaction().apply {
+                        setCustomAnimations(R.anim.slide_in, R.anim.fade_out, R.anim.fade_in, R.anim.slide_out)
+                        replace(root ?: binding.root.id, fragment)
+                        addToBackStack("Signup")
+                    }.commit()
+                }
+            }
         }
     }
 
