@@ -114,7 +114,91 @@ class Global {
             val link = "https://www.google.com"
 
             val list = arrayListOf<EventItem>()
-            repeat(10) {
+
+            list.add(
+                EventItem(
+                    1,
+                    "Sphinx",
+                    " https://scontent.fdel1-2.fna.fbcdn.net/v/t1.18169-9/21728509_356990308057176_1280822097355511769_n.png?_nc_cat=107&ccb=1-3&_nc_sid=973b4a&_nc_ohc=_sLCA2ku-k0AX_-R1X3&_nc_ht=scontent.fdel1-2.fna&oh=3fa0a47775e5c38f2cbc987518a644c6&oe=609965A6",
+                    "Jaipur’s Largest Tech Fest",
+                    "May 1",
+                    "MNIT Jaipur",
+                    true,
+                    50,
+                    arrayListOf("tech", "dev", "hackathon", "hunt", "techfest"),
+                    " https://www.instagram.com/p/B4eVu3HnOl7/ ",
+                    " At long last, we're here. 1 is the ultimate number, symbolizing the leader. Each individual craves to attain the position of the ace. The coming three days will be full of enthusiasm, optimism and vitality. Still wondering why? Well there's just 1 day left for Sphinx'21 to win the hearts of technical geeks from all over the nation and motivate the youth with it's fervor. So prepare for a burst of activities, and get ready to prove that your knowledge is worth appreciation in the upcoming intense competitions and compelling techno-battles.",
+                    "https://www.google.com",
+                    arrayListOf(
+                        EventContact(
+                            "Anuv Jain",
+                            "7894302984",
+                        ),
+                        EventContact(
+                            "Sakhi Mallick",
+                            "8456068649"
+                        )
+                    )
+                ),
+            )
+
+            list.add(
+                EventItem(
+                    1000,
+                    "Table Tennis",
+                    "",
+                    " Table tennis trials",
+                    "May 27",
+                    "TT room AB1",
+                    true,
+                    1,
+                    arrayListOf(
+                        "sports", "tennis"
+                    ),
+                    " ",
+                    " Table Tennis team of MUJ is conducting the team trials.\nRules:\n1) Bring your own racket\n2)Wear proper sports shoes\n It will be a knockout challenge that means if you win you move forward else better luck next time .",
+                    "https://www.google.com",
+                    arrayListOf(
+                        EventContact(
+                            "Anuv Jain",
+                            "7894302984",
+                        ),
+                        EventContact(
+                            "Sakhi Mallick",
+                            "8456068649"
+                        )
+                    )
+                ),
+            )
+
+            list.add(
+                EventItem(
+                    1000,
+                    "Anant Drishti",
+                    " https://static.businessworld.in/article/article_extra_large_image/1605787112_bUAMBu_Manipal_University_Jaipur.jpg",
+                    " Space for Everyone",
+                    "May 27",
+                    "Online",
+                    true,
+                    1,
+                    arrayListOf("Space", "technology"),
+                    " https://www.instagram.com/anantdrishti.muj/",
+                    " We are happy to announce our new webinar on Space for Everyone by Mr. Sunny Kabrawala, Founder of STAR Technologies.\n Date: 27 May 2021 \nTime: 10:30 AM",
+                    "https://www.google.com",
+                    arrayListOf(
+                        EventContact(
+                            "Anuv Jain",
+                            "7894302984",
+                        ),
+                        EventContact(
+                            "Sakhi Mallick",
+                            "8456068649"
+                        )
+                    )
+                ),
+            )
+
+            repeat(20) {
                 val club = clubs.entries.random()
                 list.add(
                     EventItem(
@@ -147,7 +231,7 @@ class Global {
                     )
                 )
             }
-            return list
+            return ArrayList(list.shuffled())
         }
     }
 }
