@@ -1,5 +1,6 @@
 package com.oddlyspaced.compass.activity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -34,6 +35,10 @@ class DashboardActivity : AppCompatActivity() {
                         FollowFragment.newInstance(),
                         SearchFragment.newInstance()
                 ), supportFragmentManager)
+
+        binding.imgSettings.setOnClickListener {
+            startActivity(Intent(applicationContext, SettingsActivity::class.java))
+        }
     }
 
     inner class ViewPagerAdapter(private val fragments: ArrayList<Fragment>, fm: FragmentManager) : FragmentPagerAdapter(fm) {
