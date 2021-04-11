@@ -57,7 +57,7 @@ class Global {
             EventItem(
                 1003,
                 "Cinefelia",
-                "https://www.instagram.com/cinefiliamuj/",
+                "https://yt3.ggpht.com/ytc/AAUvwnjlYMk4PgDzmLX7608xjQM7Ywjv0Zekh2mcT4nRIg=s900-c-k-c0x00ffffff-no-rj",
                 "iKhlaas",
                 "April 29th",
                 "TMA PAI Auditorium",
