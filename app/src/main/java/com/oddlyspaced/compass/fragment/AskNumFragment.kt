@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import com.oddlyspaced.compass.R
 import com.oddlyspaced.compass.databinding.FragmentAskNumberBinding
@@ -14,6 +15,7 @@ class AskNumFragment: Fragment() {
     var root: Int? = null
 
     companion object {
+        const val ROOT = "root_id"
         @JvmStatic
         fun newInstance(): AskNumFragment {
             return AskNumFragment()
@@ -26,9 +28,17 @@ class AskNumFragment: Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        root = arguments?.getInt(ROOT)
         binding.customBtnContinue.setOnClickListener {
-            val fragment = SignUpFragment.newInstance()
-            fragmentManager?.beginTransaction()?.replace(root ?: binding.root.id, fragment)?.addToBackStack("SignUp")?.commit()
+            val fragment = SignUpFragment.newInstance().apply {
+                arguments = bundleOf(SignUpFragment.REG_NUM to binding.customTextField.getText())
+            }
+
+            parentFragmentManager.beginTransaction().apply {
+                setCustomAnimations(R.anim.slide_in, R.anim.fade_out, R.anim.fade_in, R.anim.slide_out)
+                replace(root ?: binding.root.id, fragment)
+                addToBackStack("Signup")
+            }.commit()
         }
     }
 
