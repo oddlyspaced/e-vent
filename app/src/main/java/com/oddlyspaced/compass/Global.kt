@@ -3,6 +3,7 @@ package com.oddlyspaced.compass
 import com.oddlyspaced.compass.modal.EventContact
 import com.oddlyspaced.compass.modal.EventItem
 
+
 class Global {
     companion object {
 //        fun getMockData() = arrayListOf(
